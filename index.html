@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery初步</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>jQuery</h1>
+     <p>
+        使得下列为jQuery新设置的API</br>
+        var $div=$('div')</br>
+        $div.addClass(['red'])</br>
+        $div.setText('hi')
+    </p>
+        <h2>一：首先申明一个变量jQuery等于一个函数：</h2>
+        <p>
+            window.jQuery=function(传参){}</br>
+            var $div=$('div')</br>
+            $div就可以调用原函数</br>
+            其次在这个基本的函数中有如下各部分：
+        </p>
+        
+        <h3>1：获取目标元素</h3>
+        <p>
+            这个函数最首先一点就是要通过路径获取到所有的元素</br>
+            所以需要一个变量来储存通过选择器所获取的元素</br>
+            let b={}</br>
+            let arr=document.querySelectorAll(传参)</br>
+            遍历这个arr，使得b[i]=arr[i],最后return这个b</br>
+            这样$div就可以调用这个原函数，得到目标元素并且存于b中</br>
+        </p>
+        <h3>2：添加classs</h3>
+        <p>
+            需在原函数中新增一个函数，因为原函数要返回一个b,所以新函数可以这样写：</br>
+            b.addclass=function(传参){}，而函数里面需要遍历arr，遍历后给目标元素全部的class添加一个样式</br>
+            arr[i].classList.add(传参)
+        </p>
+        <h3>3：修改标签里内容</h3>
+        <p>同理，需要新增一个函数，并且用原函数返回的b作为变量好引用新增的函数</br>
+            b.setText=function(传参){}，函数里面也要遍历这个目标元素，遍历后修改每一个元素的内容</br>
+            arr[i].textContent=传参
+        </p>
+      
+</body>
+</html>
